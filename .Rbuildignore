@@ -1,0 +1,10 @@
+^codecov\.yml$
+^_pkgdown\.yml$
+^.dockerignore$
+^.deploy\.sh$
+^Dockerfile$
+^README\.pt\-br\.md$
+^\.lintr$
+^\.github$
+^docs$
+^\.circleci$

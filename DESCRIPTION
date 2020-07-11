@@ -1,0 +1,27 @@
+Package: ShinyPWA
+Title: A tool to create PWA config files
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Lucas",
+           family = "Carotta",
+           role = c("aut", "cre"),
+           email = "lucas.carotta@outlook.com")
+Description: The main idea is to create a "bundler" of sorts to handle all the
+             plethora of configurations needed to integrate a Shiny application
+             to run as a Progressive Web App.
+License: GNU v2
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/Fazendaaa/ShinyPWA
+BugReports: https://github.com/Fazendaaa/ShinyPWA/issues
+Suggests: 
+    testthat (>= 2.3.1),
+    covr (>= 3.4.0),
+    lintr (>= 2.0.1),
+    roxygen2 (>= 7.0.2),
+    devtools (>= 2.2.2),
+    goodpractice (>= 1.0.2)
+Imports: 
+    assertthat (>= 0.2.1)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.2

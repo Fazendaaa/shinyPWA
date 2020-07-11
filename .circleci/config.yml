@@ -1,0 +1,88 @@
+version: 2
+
+jobs:
+  test:
+    docker:
+      - image: fazenda/shinypwa
+    steps:
+      - checkout
+      - setup_remote_docker: 
+          docker_layer_caching: true 
+      - run:
+          name: Running tests
+          command: R -e 'devtools::test()'
+
+  code-analysis:
+    docker:
+      - image: fazenda/shinypwa
+    steps:
+      - checkout
+      - setup_remote_docker: 
+          docker_layer_caching: true 
+      - run:
+          name: Running code analysis
+          command: |
+            R -e 'devtools::check()'
+            R -e 'goodpractice::gp()'
+
+  docs-build:
+    docker:
+      - image: fazenda/shinypwa
+    steps:
+      - checkout
+      - setup_remote_docker: 
+          docker_layer_caching: true 
+      - run:
+          name: Building docs
+          command: R -e 'devtools::document()'
+      - run:
+          name: Running spell check
+          command: R -e 'spelling::spell_check_package()'
+      - run:
+          name: Building site
+          command: R -e 'pkgdown::build_site()'
+      - persist_to_workspace:
+          root: man
+          paths: "*"
+      - persist_to_workspace:
+          root: docs
+          paths: "*"
+  
+  docs-deploy:
+      docker:
+        - image: docker:17.05.0-ce-git
+      steps:
+      - checkout
+      - setup_remote_docker: 
+          docker_layer_caching: true 
+      - attach_workspace:
+          at: man/
+      - attach_workspace:
+          at: docs/
+      - add_ssh_keys:
+          fingerprints:
+            - "d1:8c:4c:89:0e:72:4c:6b:d2:1b:36:87:da:11:78:1b"
+      - run:
+          name: Deploy man and docs to github
+          command: |
+            git config user.email "lucas.carotta@outlook.com"
+            git config user.name "Fazendaaa"
+            git add .
+            git commit -m "[ci skip] Deploying man and docs"
+            git push origin master
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test
+      - code-analysis
+      - docs-build
+      - docs-deploy:
+          requires:
+            - test
+            - code-analysis
+            - docs-build
+          filters:
+            branches:
+              only: master
