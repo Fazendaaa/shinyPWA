@@ -112,7 +112,6 @@ shinyPWA <- function(config) {
         stop('Invalid input')        
     }
 
-    return (tagList(addAppVersion__(config[['version']]),
-                    createManifest__(config),
-                    createServiceWorker__()))
+    return (tagList(createManifest__(config),
+                    createServiceWorker__(config[['version']])))
 }

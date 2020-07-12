@@ -4,7 +4,12 @@
 \alias{createServiceWorker__}
 \title{Create Service Worker}
 \usage{
-createServiceWorker__()
+createServiceWorker__(websiteVersion)
+}
+\arguments{
+\item{websiteVersion}{\itemize{
+\item site version
+}}
 }
 \value{
 Whehter or not the operation has been successful completed

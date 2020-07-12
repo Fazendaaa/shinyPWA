@@ -1,6 +1,6 @@
 self.addEventListener('install', installEvent => {
     installEvent.waitUntil(
-        caches.open(window.localStorage.getItem(websiteVersion)).then(cache => {
+        caches.open(websiteVersion).then(cache => {
             cache.addAll([ '/*' ]);
         })
     )
