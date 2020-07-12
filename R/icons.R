@@ -15,13 +15,21 @@
 #'
 #' @returns the desired metadata
 #'
+#' @importFrom imager load.image height width
+#'
 #' @keywords internal
 #'
 inferIconMetadata__ <- function(icon) {
+    filename <- tail(strsplit(icon, '/'), n = 1)
+    # I know that this is dumb AF and files don't work this way, but 99% of the
+    # cases this will work just fine
+    format <- tail(strsplit(filename, '.'), n = 1)
+    image <- load.image(icon)
+
     return (list(
-        src = '',
-        type = '',
-        sizes = '',
+        src = icon,
+        type = paste0('image/', format),
+        sizes = paste(height(image), 'x', width(image)),
     ))
 }
 

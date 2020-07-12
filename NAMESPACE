@@ -2,6 +2,9 @@
 
 export(shinyPWA)
 importFrom(assertthat,is.string)
+importFrom(imager,height)
+importFrom(imager,load.image)
+importFrom(imager,width)
 importFrom(jsonlite,toJSON)
 importFrom(jsonlite,unbox)
 importFrom(shiny,tagList)
