@@ -80,6 +80,6 @@ fetchIcons__ <- function() {
 #'
 createIconsRefs__ <- function() vapply(
     fetchIcons__(),
-    inferIconMetadata__,
+    function(icon) inferIconMetadata__(icon),
     list()
 )
