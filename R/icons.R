@@ -38,7 +38,7 @@ inferIconMetadata__ <- function(icon) {
 #' @description
 #' Looks for files in the 'www/icons/' folder.
 #'
-#' @returns the name of all the icons presented in the 'icon' folder
+#' @param icons - the icon folder
 #'
 #' @examples
 #'
@@ -50,9 +50,7 @@ inferIconMetadata__ <- function(icon) {
 #'
 #' @keywords internal
 #'
-fetchIcons__ <- function() {
-    icons <- paste0(getwd(), '/www/icons')
-
+fetchIcons__ <- function(icons) {
     if (FALSE == dir.exists(icons)) {
         stop(paste0('Folder containing icons could not be found, please set ',
                     'hasIcon to FALSE or create the incons folder and add ',
@@ -78,4 +76,10 @@ fetchIcons__ <- function() {
 #'
 #' @keywords internal
 #'
-createIconsRefs__ <- function() Map(inferIconMetadata__,fetchIcons__())
+createIconsRefs__ <- function() {
+    icons <- paste0(getwd(), '/www/icons')
+
+    return (Map(function (icon) {
+        return (inferIconMetadata__(paste0(icons, icon)))
+    },fetchIcons__(icons)))
+}

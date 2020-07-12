@@ -4,11 +4,14 @@
 \alias{fetchIcons__}
 \title{Fetch Icons}
 \usage{
-fetchIcons__()
+fetchIcons__(icons)
+}
+\arguments{
+\item{icons}{\itemize{
+\item the icon folder
+}}
 }
 \value{
-the name of all the icons presented in the 'icon' folder
-
 The icons to fetch its metadata
 }
 \description{
