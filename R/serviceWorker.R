@@ -46,7 +46,8 @@ createServiceWorker__ <- function(websiteVersion) {
 
     if (FALSE == dir.exists(basePath)) {
         dir.create(basePath)
-    } if (FALSE == dir.exists(jsPath)) {
+    }
+    if (FALSE == dir.exists(jsPath)) {
         dir.create(jsPath)
     }
 
