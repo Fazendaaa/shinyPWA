@@ -24,10 +24,53 @@
 #'
 #' @returns Whether or not the input is valid
 #'
+#' @importFrom assertthat is.string
+#'
 #' @keywords internal
 #'
-shinyPWA__ <- function() {
+shinyPWA__ <- function(config) {
+    if (FALSE == is.list(config)) {
+        warn('config must be a list')
 
+        return FALSE
+    }
+    if (FALSE == is.string(config[['name']])) {
+        warn('config[[\'name\']] must be a string')
+
+        return FALSE
+    }
+    if (FALSE == is.string(config[['shortname']])) {
+        warn('config[[\'shortname\']] must be a string')
+
+        return FALSE
+    }
+    if (FALSE == is.string(config[['backgroundcolor']])) {
+        warn('config[[\'background\']] must be a string')
+
+        return FALSE
+    }
+    if (FALSE == is.string(config[['themecolor']])) {
+        warn('config[[\'themecolor\']] must be a string')
+
+        return FALSE
+    }
+    if (FALSE == is.string(config[['orientation']])) {
+        warn('config[[\'orientation\']] must be a string')
+
+        return FALSE
+    }
+    if (FALSE == is.boolean(config[['hasIcons']])) {
+        warn('config[[\'orientation\']] must be a boolean')
+
+        return FALSE
+    }
+    if (FALSE == is.string(config[['verion']])) {
+        warn('config[[\'version\']] must be a string')
+
+        return FALSE
+    }
+
+    return TRUE
 }
 
 #' Shiny PWA
@@ -48,11 +91,11 @@ shinyPWA__ <- function() {
 #'
 #' @export
 #'
-shinyPWA <- function() {
-    if (FALSE == shinyPWA__()) {
+shinyPWA <- function(config) {
+    if (FALSE == shinyPWA__(config)) {
         stop('Invalid input')        
     }
 
-    createManifest__()
-    createServiceWorker__(version)
+    createManifest__(config)
+    createServiceWorker__(config[['version']])
 }

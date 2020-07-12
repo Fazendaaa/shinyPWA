@@ -15,15 +15,15 @@
 #'
 #' @keywords internal
 #'
-createManifestJSON__ <- function(name, shortname, starturl, display) toJSON(list(
-    name = name,
-    short_name = shortname,
+createManifestJSON__ <- function(config) toJSON(list(
+    name = config[['name']],
+    short_name = config[['shortname']],
     start_url = 'index.html',
-    display = display,
-    backgroundcolor = backgroundcolor,
-    themecolor = themecolor,
-    orientation = orientation,
-    icons = if (hasIcons) createIconsRefs__() else c()
+    display = config[['display']],
+    backgroundcolor = config[['backgroundcolor']],
+    themecolor = config[['themecolor']],
+    orientation = config[['orientation']],
+    icons = if (config[['hasIcons']]) createIconsRefs__() else c()
 ))
 
 #' Create Manifest
@@ -45,7 +45,7 @@ createManifestJSON__ <- function(name, shortname, starturl, display) toJSON(list
 #'
 #' @keywords internal
 #'
-createManifest__ <- function() {
-    createManifestJSON__()
-    tags$head(tags$link(rel='manifest', type='manifest.json'))
+createManifest__ <- function(config) {
+    createManifestJSON__(config)
+    tags[['head']](tags[['head']](rel='manifest', type='manifest.json'))
 }

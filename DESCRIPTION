@@ -12,8 +12,8 @@ Description: The main idea is to create a "bundler" of sorts to handle all the
 License: GNU v2
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/Fazendaaa/ShinyPWA
-BugReports: https://github.com/Fazendaaa/ShinyPWA/issues
+URL: https://github.com/Fazendaaa/shinyPWA
+BugReports: https://github.com/Fazendaaa/shinyPWA/issues
 Suggests: 
     testthat (>= 2.3.1),
     covr (>= 3.4.0),

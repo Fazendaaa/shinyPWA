@@ -1,4 +1,4 @@
-# ShinyPWA
+# shinyPWA
 
 A simple PWA bundler to work with Shiny Dashboard
 
@@ -16,8 +16,8 @@ A simple PWA bundler to work with Shiny Dashboard
 [![made-with-r](https://img.shields.io/badge/Made%20with-R-1f425f.svg?style=flat-square)](https://www.r-project.org/)
 [![made-with-docker](https://img.shields.io/badge/Made%20with-Docker-important?style=flat-square)](https://www.docker.com/)
 [![made-with-vscode](https://img.shields.io/badge/made%20with-vscode-blueviolet?style=flat-square)](https://code.visualstudio.com/)
-[![GPL license](https://img.shields.io/badge/License-GPL-blue.svg?style=flat-square)](https://github.com/Fazendaaa/ShinyPWA/LICENSE.html)
-[![GitHub release](https://img.shields.io/github/release/Fazendaaa/ShinyPWA.svg?style=flat-square)](https://github.com/Fazendaaa/ShinyPWA/releases/)
+[![GPL license](https://img.shields.io/badge/License-GPL-blue.svg?style=flat-square)](https://github.com/Fazendaaa/shinyPWA/LICENSE.html)
+[![GitHub release](https://img.shields.io/github/release/Fazendaaa/shinyPWA.svg?style=flat-square)](https://github.com/Fazendaaa/shinyPWA/releases/)
 
 </div>
 
