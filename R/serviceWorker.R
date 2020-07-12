@@ -53,7 +53,7 @@ createServiceWorker__ <- function(websiteVersion) {
         dir.create(jsPath)
     }
 
-    SW <- read(addJS__('serviceWorker'))
+    SW <- read.delim(addJS__('serviceWorker'))
     write(paste0('const websiteVersion="', websiteVersion,'";\n', SW),
           paste0(jsPath, 'serviceWorker.js'))
     file.copy(addJS__('serviceWorkerChecker'),
