@@ -64,6 +64,6 @@ createServiceWorker__ <- function() {
 #'
 #' @keywords internal
 #'
-addAppVersion__ <- function(websiteVersion) tags[['script']](HTML(
-    paste0('document.websiteVersion="', websiteVersion, '";')
-))
+addAppVersion__ <- function(websiteVersion) tags[['script']](
+    paste0('const websiteVersion="', websiteVersion, '";')
+)
