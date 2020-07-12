@@ -44,5 +44,6 @@ addJS__ <- function(filename) system.file(
 #'
 createServiceWorker__ <- function(websiteVersion) list(
     app = includeScript(addJS__('app')),
-    serviceWorker = includeScript(addJS__('serviceWorker'), websiteVersion)
+    serviceWorker = includeScript(addJS__('serviceWorker'),
+                                  websiteVersion = websiteVersion)
 )
