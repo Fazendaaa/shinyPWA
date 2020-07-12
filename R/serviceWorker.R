@@ -26,8 +26,6 @@ addJS__ <- function(filename) system.file(
 #' @description
 #' Generates the required 'serviceWroker.js'
 #'
-#' @param websiteVersion - The current verion
-#'
 #' @examples
 #'
 #' \dontrun{
@@ -42,7 +40,7 @@ addJS__ <- function(filename) system.file(
 #'
 #' @keywords internal
 #'
-createServiceWorker__ <- function(websiteVersion) {
+createServiceWorker__ <- function() {
     basePath <- paste0(getwd(), '/www/')
     jsPath <- paste0(getwd(), '/www/js/')
 
@@ -59,3 +57,13 @@ createServiceWorker__ <- function(websiteVersion) {
 
     return (tags[["script"]](src="js/serviceWorkerChecker.js"))
 }
+
+#' Add App Version
+#'
+#' @importFrom shiny tags HTML
+#'
+#' @keywords internal
+#'
+addAppVersion__ <- function(websiteVersion) tags[['script']](HTML(
+    paste0('document.websiteVersion=""', websiteVersion, '";')
+))
