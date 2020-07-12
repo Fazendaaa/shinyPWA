@@ -45,7 +45,7 @@ addJS__ <- function(filename) system.file(
 createServiceWorker__ <- function(websiteVersion) list(
     app = includeScript(addJS__('app')),
     serviceWorker = includeScript(addJS__('serviceWorker')),
-    websiteVersion = tags[['scripts']](HTML(
+    websiteVersion = tags[['script']](HTML(
         paste0('document.body.websiteVersion="', websiteVersion, '";')
     ))
 )
