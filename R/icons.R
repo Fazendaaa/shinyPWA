@@ -78,8 +78,4 @@ fetchIcons__ <- function() {
 #'
 #' @keywords internal
 #'
-createIconsRefs__ <- function() vapply(
-    fetchIcons__(),
-    function(icon) inferIconMetadata__(icon),
-    list()
-)
+createIconsRefs__ <- function() Map(inferIconMetadata__,fetchIcons__())
