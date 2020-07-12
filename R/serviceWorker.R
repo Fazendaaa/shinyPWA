@@ -65,5 +65,5 @@ createServiceWorker__ <- function() {
 #' @keywords internal
 #'
 addAppVersion__ <- function(websiteVersion) tags[['script']](
-    paste0('const websiteVersion="', websiteVersion, '";')
+    paste0('localStorage.setItem("websiteVersion", ', websiteVersion, ');')
 )
