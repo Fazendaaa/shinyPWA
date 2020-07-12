@@ -51,6 +51,6 @@ createServiceWorker__ <- function(websiteVersion) {
         dir.create(jsPath)
     }
 
-    write(addJS__('app'), file = paste0(jsPath, 'app.js'))
-    write(addJS__('serviceWorker'), file = paste0(jsPath, 'serviceWorker.js'))
+    copyFile(addJS__('app'), paste0(jsPath, 'app.js'))
+    copyFile(addJS__('serviceWorker'), paste0(jsPath, 'serviceWorker.js'))
 }
