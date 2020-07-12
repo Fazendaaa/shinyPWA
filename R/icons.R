@@ -20,10 +20,10 @@
 #' @keywords internal
 #'
 inferIconMetadata__ <- function(icon) {
-    filename <- tail(strsplit(icon, '/'), n = 1)
+    filename <- tail(unlist(strsplit(icon, '/')), n = 1)
     # I know that this is dumb AF and files don't work this way, but 99% of the
     # cases this will work just fine
-    format <- tail(strsplit(filename, '.'), n = 1)
+    format <- tail(unlist(strsplit(filename, '.')), n = 1)
     image <- load.image(icon)
 
     return (list(
@@ -81,5 +81,5 @@ createIconsRefs__ <- function() {
 
     return (Map(function (icon) {
         return (inferIconMetadata__(paste0(icons, icon)))
-    },fetchIcons__(icons)))
+    }, fetchIcons__(icons)))
 }
