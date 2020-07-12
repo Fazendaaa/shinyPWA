@@ -1,4 +1,4 @@
-Package: ShinyPWA
+Package: shinyPWA
 Title: A tool to create PWA config files
 Version: 0.0.0.9000
 Authors@R: 
@@ -22,6 +22,8 @@ Suggests:
     devtools (>= 2.2.2),
     goodpractice (>= 1.0.2)
 Imports: 
-    assertthat (>= 0.2.1)
+    assertthat (>= 0.2.1),
+    shiny (>= 1.5.0),
+    jsonlite (>= 1.7.0)
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0

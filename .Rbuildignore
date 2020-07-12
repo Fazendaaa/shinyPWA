@@ -1,5 +1,4 @@
 ^codecov\.yml$
-^_pkgdown\.yml$
 ^.dockerignore$
 ^.deploy\.sh$
 ^Dockerfile$
@@ -7,4 +6,5 @@
 ^\.lintr$
 ^\.github$
 ^docs$
+^img$
 ^\.circleci$
