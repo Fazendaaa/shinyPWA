@@ -37,42 +37,42 @@
 #'
 shinyPWA__ <- function(config) {
     if (FALSE == is.list(config)) {
-        warn('config must be a list')
+        warnning('config must be a list')
 
         return (FALSE)
     }
     if (FALSE == is.string(config[['name']])) {
-        warn('config[[\'name\']] must be a string')
+        warnning('config[[\'name\']] must be a string')
 
         return (FALSE)
     }
     if (FALSE == is.string(config[['shortname']])) {
-        warn('config[[\'shortname\']] must be a string')
+        warnning('config[[\'shortname\']] must be a string')
 
         return (FALSE)
     }
     if (FALSE == is.string(config[['backgroundcolor']])) {
-        warn('config[[\'background\']] must be a string')
+        warnning('config[[\'background\']] must be a string')
 
         return (FALSE)
     }
     if (FALSE == is.string(config[['themecolor']])) {
-        warn('config[[\'themecolor\']] must be a string')
+        warnning('config[[\'themecolor\']] must be a string')
 
         return (FALSE)
     }
     if (FALSE == is.string(config[['orientation']])) {
-        warn('config[[\'orientation\']] must be a string')
+        warnning('config[[\'orientation\']] must be a string')
 
         return (FALSE)
     }
     if (FALSE == is.logical(config[['hasIcons']])) {
-        warn('config[[\'orientation\']] must be a logical')
+        warnning('config[[\'orientation\']] must be a logical')
 
         return (FALSE)
     }
     if (FALSE == is.string(config[['version']])) {
-        warn('config[[\'version\']] must be a string')
+        warnning('config[[\'version\']] must be a string')
 
         return (FALSE)
     }

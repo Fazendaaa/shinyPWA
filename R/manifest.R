@@ -67,8 +67,14 @@ createManifestJSON__ <- function(config) {
 #' @keywords internal
 #'
 createManifest__ <- function(config) {
+    basePath <- paste0(getwd(), '/www/')
+
+    if (FALSE == dir.exists(basePath)) {
+        dir.create(basePath)
+    }
+
     write(createManifestJSON__(config),
-          file = paste0(getwd(), '/www/manifest.json'))
+          file = paste0(basePath, 'manifest.json'))
     
     return (tags[['head']](tags[['head']](rel='manifest',
                                           type='manifest.json')))
