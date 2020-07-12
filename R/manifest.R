@@ -24,7 +24,7 @@
 #'
 createManifestJSON__ <- function(config) {
     manifest <- data.frame(
-        start_url = c('index.html'),
+        start_url = c('/'),
         name = c(config[['name']]),
         short_name = c(config[['shortname']]),
         display = c(config[['display']]),
