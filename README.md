@@ -1,6 +1,6 @@
 # shinyPWA
 
-A simple PWA bundler to work with Shiny Dashboard
+A simple PWA bundler to work with Shiny
 
 <div align = "center">
 <br>
