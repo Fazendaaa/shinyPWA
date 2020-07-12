@@ -8,7 +8,8 @@
 #' @examples
 #'
 #' \dontrun{
-#'
+#'     addJS__('app')
+#'     addJS__('serviceWorker')
 #' }
 #'
 #' @returns The JS file
@@ -30,7 +31,9 @@ addJS__ <- function(filename) system.file(
 #' @examples
 #'
 #' \dontrun{
-#'
+#      createServiceWorker__('v1')
+#      createServiceWorker__('v2')
+#      createServiceWorker__('v2.2')
 #' }
 #'
 #' @returns Whehter or not the operation has been successful completed

@@ -7,11 +7,15 @@
 #'
 #' @examples
 #'
-#' \dontrun {
-#'
+#' \dontrun{
+#'     inferIconMetadata('/home/usrName/Documents/shiny/www/icons/01.png')
+#'     inferIconMetadata('/home/usrName/Documents/shiny/www/icons/02.png')
+#'     inferIconMetadata('/home/usrName/Documents/shiny/www/icons/03.png')
 #' }
 #'
 #' @returns the desired metadata
+#'
+#' @keywords internal
 #'
 inferIconMetadata__ <- function(icon) {
     return (list(
@@ -30,9 +34,11 @@ inferIconMetadata__ <- function(icon) {
 #'
 #' @examples
 #'
-#' \dontrun {
-#'
+#' \dontrun{
+#'     fetchIcons__()
 #' }
+#'
+#' @returns The icons to fetch its metadata
 #'
 #' @keywords internal
 #'
@@ -56,12 +62,16 @@ fetchIcons__ <- function() {
 #'
 #' @examples
 #'
-#' \dontrun {
-#'
+#' \dontrun{
+#'     createIconsRefs__()
 #' }
 #'
 #' @returns An array of containing the icons
 #'
 #' @keywords internal
 #'
-createIconsRefs__ <- function() vapply(fetchIcons__(), inferIconMetadata__, list())
+createIconsRefs__ <- function() vapply(
+    fetchIcons__(),
+    inferIconMetadata__,
+    list()
+)
