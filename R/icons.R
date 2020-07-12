@@ -23,13 +23,13 @@ inferIconMetadata__ <- function(icon) {
     filename <- tail(unlist(strsplit(icon, '/')), n = 1)
     # I know that this is dumb AF and files don't work this way, but 99% of the
     # cases this will work just fine
-    format <- tail(unlist(strsplit(filename, '.')), n = 1)
+    format <- tail(unlist(strsplit(filename, '\\.')), n = 1)
     image <- load.image(icon)
 
     return (list(
         src = icon,
         type = paste0('image/', format),
-        sizes = paste(height(image), 'x', width(image)),
+        sizes = paste0(height(image), 'x', width(image))
     ))
 }
 
@@ -77,7 +77,7 @@ fetchIcons__ <- function(icons) {
 #' @keywords internal
 #'
 createIconsRefs__ <- function() {
-    icons <- paste0(getwd(), '/www/icons')
+    icons <- paste0(getwd(), '/www/icons/')
 
     return (Map(function (icon) {
         return (inferIconMetadata__(paste0(icons, icon)))
