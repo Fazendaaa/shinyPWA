@@ -42,7 +42,7 @@ addJS__ <- function(filename) system.file(
 #'
 #' @keywords internal
 #'
-createServiceWorker__ <- function(websiteVersion) {
-    includeScript(addJS__('serviceWorker'), websiteVersion)
-    includeScript(addJS__('app'))
-}
+createServiceWorker__ <- function(websiteVersion) list(
+    app = includeScript(addJS__('app')),
+    serviceWorker = includeScript(addJS__('serviceWorker'), websiteVersion)
+)
