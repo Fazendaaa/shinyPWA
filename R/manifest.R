@@ -77,5 +77,5 @@ createManifest__ <- function(config) {
           file = paste0(basePath, 'manifest.json'))
     
     return (tags[['head']](tags[['head']](rel='manifest',
-                                          type='manifest.json')))
+                                          href='manifest.json')))
 }

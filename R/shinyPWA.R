@@ -67,7 +67,7 @@ shinyPWA__ <- function(config) {
         return (FALSE)
     }
     if (FALSE == is.logical(config[['hasIcons']])) {
-        warning('config[[\'orientation\']] must be a logical')
+        warning('config[[\'hasIcons\']] must be a logical')
 
         return (FALSE)
     }
