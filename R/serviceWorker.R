@@ -38,6 +38,8 @@ addJS__ <- function(filename) system.file(
 #'
 #' @returns Whehter or not the operation has been successful completed
 #'
+#' @importFrom shiny tags
+#'
 #' @keywords internal
 #'
 createServiceWorker__ <- function(websiteVersion) {
@@ -51,6 +53,9 @@ createServiceWorker__ <- function(websiteVersion) {
         dir.create(jsPath)
     }
 
-    file.copy(addJS__('app'), paste0(jsPath, 'app.js'))
     file.copy(addJS__('serviceWorker'), paste0(jsPath, 'serviceWorker.js'))
+    file.copy(addJS__('serviceWorkerChecker'),
+              paste0(jsPath, 'serviceWorkerChecker.js'))
+
+    return (tags[["script"]](src="js/serviceWorkerChecker.js"))
 }
