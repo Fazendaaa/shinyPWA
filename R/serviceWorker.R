@@ -38,14 +38,18 @@ addJS__ <- function(filename) system.file(
 #'
 #' @returns Whehter or not the operation has been successful completed
 #'
-#' @importFrom shiny includeScript tags HTML
-#'
 #' @keywords internal
 #'
-createServiceWorker__ <- function(websiteVersion) list(
-    app = includeScript(addJS__('app')),
-    serviceWorker = includeScript(addJS__('serviceWorker')),
-    websiteVersion = tags[['script']](HTML(
-        paste0('document.body.websiteVersion="', websiteVersion, '";')
-    ))
-)
+createServiceWorker__ <- function(websiteVersion) {
+    basePath <- paste0(getwd(), '/www/')
+    jsPath <- paste0(getwd(), '/www/js/')
+
+    if (FALSE == dir.exists(basePath)) {
+        dir.create(basePath)
+    } if (FALSE == dir.exists(jsPath)) {
+        dir.create(jsPath)
+    }
+
+    write(addJS__('app'), file = paste0(jsPath, 'app.js'))
+    write(addJS__('serviceWorker'), file = paste0(jsPath, 'serviceWorker.js'))
+}
