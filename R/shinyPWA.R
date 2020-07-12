@@ -110,6 +110,6 @@ shinyPWA <- function(config) {
         stop('Invalid input')        
     }
 
-    return (paste0(createServiceWorker__(config[['version']]),
-                   createManifest__(config)))
+    return (c(createManifest__(config),
+              createServiceWorker__(config[['version']])))
 }
