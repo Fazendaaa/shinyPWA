@@ -7,7 +7,7 @@
 #'
 #' @examples
 #'
-#' \dontRun {
+#' \dontrun {
 #'
 #' }
 #'
@@ -30,7 +30,7 @@ inferIconMetadata__ <- function(icon) {
 #'
 #' @examples
 #'
-#' \dontRun {
+#' \dontrun {
 #'
 #' }
 #'
@@ -56,7 +56,7 @@ fetchIcons__ <- function() {
 #'
 #' @examples
 #'
-#' \dontRun {
+#' \dontrun {
 #'
 #' }
 #'

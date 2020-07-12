@@ -15,7 +15,7 @@ Web App (PWA).
 }
 \examples{
 
-\dontRun{
+\dontrun{
 
 }
 

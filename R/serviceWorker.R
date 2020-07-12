@@ -7,7 +7,7 @@
 #'
 #' @examples
 #'
-#' \dontRun{
+#' \dontrun{
 #'
 #' }
 #'
@@ -29,7 +29,7 @@ addJS__ <- function(filename) system.file(
 #'
 #' @examples
 #'
-#' \dontRun{
+#' \dontrun{
 #'
 #' }
 #'

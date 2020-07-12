@@ -18,7 +18,7 @@
 #'
 #' @examples
 #'
-#' \dontRun{
+#' \dontrun{
 #'
 #' }
 #'
@@ -40,7 +40,7 @@ shinyPWA__ <- function() {
 #'
 #' @examples
 #'
-#' \dontRun{
+#' \dontrun{
 #'
 #' }
 #'

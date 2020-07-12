@@ -30,7 +30,7 @@ Checks whether or not the input provided trought the user is a correct one.
 }
 \examples{
 
-\dontRun{
+\dontrun{
 
 }
 

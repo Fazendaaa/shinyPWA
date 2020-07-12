@@ -19,7 +19,7 @@ Infer the incon metadata
 }
 \examples{
 
-\dontRun {
+\dontrun {
 
 }
 

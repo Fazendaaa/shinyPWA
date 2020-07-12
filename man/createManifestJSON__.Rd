@@ -11,7 +11,7 @@ Creates the 'manifest.json' file
 }
 \examples{
 
-\dontRun{
+\dontrun{
 
 }
 

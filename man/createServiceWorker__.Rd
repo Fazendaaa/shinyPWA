@@ -19,7 +19,7 @@ Generates the required 'serviceWroker.js'
 }
 \examples{
 
-\dontRun{
+\dontrun{
 
 }
 

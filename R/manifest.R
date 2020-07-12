@@ -5,7 +5,7 @@
 #'
 #' @examples
 #'
-#' \dontRun{
+#' \dontrun{
 #'
 #' }
 #'
@@ -35,7 +35,7 @@ createManifestJSON__ <- function(name, shortname, starturl, display) toJSON(list
 #'
 #' @example
 #'
-#' \dontRun{
+#' \dontrun{
 #'
 #' }
 #'

@@ -15,7 +15,7 @@ file.
 }
 \examples{
 
-\dontRun {
+\dontrun {
 
 }
 

@@ -19,7 +19,7 @@ Fetches JavaScript file with its path.
 }
 \examples{
 
-\dontRun{
+\dontrun{
 
 }
 

@@ -14,7 +14,7 @@ Looks for files in the 'www/icons/' folder.
 }
 \examples{
 
-\dontRun {
+\dontrun {
 
 }
 
