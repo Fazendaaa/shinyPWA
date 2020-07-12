@@ -38,12 +38,14 @@ addJS__ <- function(filename) system.file(
 #'
 #' @returns Whehter or not the operation has been successful completed
 #'
-#' @importFrom shiny includeScript
+#' @importFrom shiny includeScript tags HTML
 #'
 #' @keywords internal
 #'
 createServiceWorker__ <- function(websiteVersion) list(
     app = includeScript(addJS__('app')),
-    serviceWorker = includeScript(addJS__('serviceWorker'),
-                                  websiteVersion = websiteVersion)
+    serviceWorker = includeScript(addJS__('serviceWorker')),
+    websiteVersion = tags[['scripts']](HTML(
+        paste0('document.body.websiteVersion="', websiteVersion, '";')
+    ))
 )
