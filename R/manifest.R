@@ -37,7 +37,7 @@ createManifestJSON__ <- function(config) {
         manifest[["icons"]] <- createIconsRefs__()
     }
 
-    return (toJSON(unbox(manifest)))
+    return (toJSON(unbox(manifest), pretty = TRUE))
 }
 
 #' Create Manifest
