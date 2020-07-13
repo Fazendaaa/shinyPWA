@@ -34,10 +34,13 @@ createManifestJSON__ <- function(config) {
     )))
 
     if (config[['hasIcons']]) {
-        manifest <- paste0(gsub("}", ",", manifest),
-                           '"icons": ',
-                           toJSON(unname(createIconsRefs__())),
-                           '}')
+        icons <- gsub('\\[', '', toJSON(unname(createIconsRefs__())))
+        icons <- gsub(']', '', icons)
+
+        manifest <- paste0(gsub('}', ',', manifest),
+                           '"icons": \n[',
+                            icons,
+                           ']\n}')
     }
 
     print(manifest)
