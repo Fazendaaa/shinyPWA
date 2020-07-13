@@ -77,7 +77,7 @@ fetchIcons__ <- function(icons) {
 #' @keywords internal
 #'
 createIconsRefs__ <- function() {
-    icons <- paste0(getwd(), '/www/icons/')
+    icons <- './www/icons/'
 
     return (Map(function (icon) {
         return (inferIconMetadata__(paste0(icons, icon)))

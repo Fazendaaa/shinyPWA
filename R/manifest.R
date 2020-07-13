@@ -43,8 +43,6 @@ createManifestJSON__ <- function(config) {
                            ']\n}')
     }
 
-    print(manifest)
-
     return (manifest)
 }
 
