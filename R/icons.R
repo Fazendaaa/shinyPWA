@@ -27,7 +27,7 @@ inferIconMetadata__ <- function(icon) {
     image <- load.image(icon)
 
     return (list(
-        src = icon,
+        src = gsub('./www/', '', icon),
         type = paste0('image/', format),
         sizes = paste0(height(image), 'x', width(image))
     ))
