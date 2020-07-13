@@ -23,7 +23,7 @@
 #' @keywords internal
 #'
 createManifestJSON__ <- function(config) {
-    manifest <- data.frame(
+    manifest <- toJSON(unbox(data.frame(
         start_url = c('/'),
         name = c(config[['name']]),
         short_name = c(config[['shortname']]),
@@ -31,13 +31,18 @@ createManifestJSON__ <- function(config) {
         background_color = c(config[['backgroundcolor']]),
         theme_color = c(config[['themecolor']]),
         orientation = c(config[['orientation']])
-    )
+    )))
 
     if (config[['hasIcons']]) {
-        manifest[["icons"]] <- createIconsRefs__()
+        manifest <- paste0(gsub("}", ",", manifest),
+                           '"icons": ',
+                           toJSON(unname(createIconsRefs__())),
+                           '}')
     }
 
-    return (toJSON(unbox(manifest), pretty = TRUE))
+    print(manifest)
+
+    return (manifest)
 }
 
 #' Create Manifest
