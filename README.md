@@ -23,7 +23,9 @@ A simple PWA bundler to work with Shiny
 
 ## Intro
 
-After writing [this](https://fazenda.hashnode.dev/analise-de-dados-site-banco-de-dados-tudo-no-isso-seu-pc-e-sem-precisar-instalar-o-r-shiny-e-o-mongo-ckcfwjz380058kns13oye8f03) blogpost about a **R + Shiny + Mongo + Docker** ([RSMD](https://github.com/Fazendaaa/RSMD)) stack, I've pointed out about [`shinyMobile`](https://github.com/RinteRface/shinyMobile) pacakge, but to my suprise it's built on to of the [Framework7](https://framework7.io/). So to complement the example shown in my post, I've decided to built **yet another PWA package** to allow my example -- which is based in [`shinyDashboard`](https://github.com/rstudio/shinydashboard) -- to have a proper "PWA" experience.
+After writing [this](https://fazenda.hashnode.dev/analise-de-dados-site-banco-de-dados-tudo-no-isso-seu-pc-e-sem-precisar-instalar-o-r-shiny-e-o-mongo-ckcfwjz380058kns13oye8f03) blogpost about a **R + Shiny + Mongo + Docker** ([RSMD](https://github.com/Fazendaaa/RSMD)) stack, I've pointed out about [`shinyMobile`](https://github.com/RinteRface/shinyMobile) pacakge, but to my suprise it's built on to of the [Framework7](https://framework7.io/).
+
+So to complement the example shown in my post, to provide a proper Progressive Web App (PWA) experience I've decided to built **yet another PWA package** to allow my example -- which is based in [`shinyDashboard`](https://github.com/rstudio/shinydashboard) -- to work.
 
 ### Docker
 
@@ -45,7 +47,7 @@ devtools::install_github('Fazendaaa/shinyPWA')
 
 ## Using
 
-There is only one function that this package exports. Here's an example in the [`R + Shiny + Mongo + Docker`](https://github.com/Fazendaaa/RSMD) project:
+There is only one function that this package exports, the `shinyPWA` function. Here's an example in the [`R + Shiny + Mongo + Docker`](https://github.com/Fazendaaa/RSMD) project:
 
 ```R
 ...
@@ -70,7 +72,7 @@ If you set `hasIcons` to `TRUE` you will need to follow the [icons](#icons) step
 
 ### Icons
 
-If you make icons for your application, just create a folder called `icons` under your `www` directory:
+If you make icons for your application, just create a folder called `icons` under your `www` directory and place it there:
 
 ```shell
 ...
